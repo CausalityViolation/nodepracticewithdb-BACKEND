@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="">
+<head>
+    <meta charset="UTF-8">
+    <title>POST</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body>
+
+<!---
+<form method="POST" id="formGris">
+    <p>Namn: <label for="grisNamn">Namn: </label><input type="text" id="grisNamn" name="grisNamn"></p>
+    <p>Sort: <label for="grisSort">Sort: </label><input type="text" id="grisSort" name="grisSort"></p>
+    <p>Land: <label for="grisLand">Land: </label><input type="text" id="grisLand" name="grisLand"></p>
+    <p>Pris: <label for="grisPris">Pris: </label><input type="text" id="grisPris" name="grisPris"></p>
+    <p><input type="submit" value="Submit"></p>
+</form>
+--->
+
+
+<div id="registration-form">
+    <div class='fieldset'>
+        <p class="title">Piglets Form</p>
+
+        <form method="POST" id="formGris">
+            <div class='row'>
+                <label for='grisNamn'>Namn</label>
+                <input type="text" placeholder="<namn>" name='grisNamn' id='grisNamn' data-required="true"
+                       data-error-message="Name is required.">
+            </div>
+            <div class='row'>
+                <label for="grisSort">Sort</label>
+                <input type="text" placeholder="<sort>" name='grisSort' id="grisSort" data-required="true"
+                       data-error-message="Type is required.">
+            </div>
+            <div class='row'>
+                <label for="grisLand">Land</label>
+                <input type="text" placeholder="<land>" name='grisLand' id="grisLand" data-required="true"
+                       data-error-message="Country is required.">
+            </div>
+            <div class='row'>
+                <label for="grisPris">Pris</label>
+                <input type="text" placeholder="<pris>" name='grisPris' id="grisPris" data-required="true"
+                       data-error-message="Price is required.">
+            </div>
+            <input type="submit" value="Submit">
+        </form>
+    </div>
+</div>
+
+</body>
+<script src="js/fetchGrisPost.js"></script>
+</html>
