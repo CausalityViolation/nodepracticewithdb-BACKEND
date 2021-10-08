@@ -92,13 +92,13 @@ app.get("/pigs/:grisId", (req, res) => {
     let sql = "SELECT * FROM Grisar WHERE grisId = ?"
     let params = [req.params.grisId]
 
-    db.get(sql, params, (err, row) => {
+    db.get(sql, params, (err, rows) => {
 
-        let object = JSON.stringify(row)
+        let object = JSON.stringify(rows)
 
         if (object != null) {
             res.json({
-                "pigs": row
+                "pigs": rows
             })
         } else {
             res.json("Could not find Id: " + req.params.grisId)
@@ -111,5 +111,23 @@ app.get("/pigs/:grisId", (req, res) => {
 app.get("/", (req, res) => {
 
 });
+
+app.get("/quiz/", (req, res) => {
+
+    let sql = 'SELECT * FROM quiz'
+    let params = []
+
+    db.all(sql, params, (err, rows) => {
+
+        if (err) {
+            res.status(400).json({"error": err.message});
+            return;
+        }
+        res.json({
+            "message": "Successfully imported database.",
+            "quiz": rows
+        })
+    });
+})
 
 
